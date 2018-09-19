@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 import Todo from './Todo';
 
+import {
+    getList
+} from '../modules/Todo/actions';
+
 class Todos extends React.Component {
     constructor(props) {
         super(props);
@@ -15,12 +19,14 @@ class Todos extends React.Component {
     render() {
         const { lists, selected } = this.props;
 
-        if (selected == '') {
+        if (!selected) {
             return null;
         }
 
         const list = getList(lists, selected);
-        const { todos } = list;
+        //const { todos } = list;
+
+        let todos = [];
 
         return (
             <>

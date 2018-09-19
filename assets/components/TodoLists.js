@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Todos from './Todos';
+
 class TodoLists extends React.Component {
     constructor(props) {
         super(props);
@@ -11,7 +13,9 @@ class TodoLists extends React.Component {
     }
 
     render() {
-        const { lists, selected } = this.props;
+        //const { lists, selected } = this.props;
+        let lists = [];
+        let selected = '';
 
         return (
             <>
